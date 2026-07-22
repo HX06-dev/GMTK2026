@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://ctae7kpgvna66"]
 
 [node name="Main" type="Node2D" unique_id=171715838]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=2141326381]
+
+[node name="Towers" type="Node2D" parent="." unique_id=790668397]
+
+[node name="Foreground" type="TileMapLayer" parent="." unique_id=1587105967]
