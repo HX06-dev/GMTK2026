@@ -1,12 +1,12 @@
 extends Node2D
 class_name Tower
 
-@export var tower_name: String
-@export var damage: float
-@export var fire_rate: float
-@export var range: float
-@export var projectile_scene: PackedScene
-@export var cost: int
+var tower_name: String
+var damage: float
+var fire_rate: float
+var range: float
+var projectile_scene: PackedScene
+var cost: int
 
 var enemies_in_range: Array[Node2D] = []
 var current_target: Node2D = null
@@ -18,6 +18,7 @@ var time_since_last_shot: float = 0.0
 @onready var lifetime_bar: ProgressBar = $LifetimeBar
 
 func _ready() -> void:
+	add_to_group("towers")
 	range_area.body_entered.connect(_on_body_entered)
 	range_area.body_exited.connect(_on_body_exited)
 	_update_range_shape()
