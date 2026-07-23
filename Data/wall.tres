@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://bqssw08mfcto7"]
+
+[ext_resource type="Texture2D" uid="uid://c4xc6xcm2481n" path="res://Assets/Towers/wall.png" id="1_ekp74"]
+[ext_resource type="Script" uid="uid://b4bxqnjashia2" path="res://Scripts/Towers/tower_data.gd" id="1_xfsi1"]
+[ext_resource type="PackedScene" uid="uid://gguvwdc2jgku" path="res://Scenes/Towers/Wall.tscn" id="2_1jfeq"]
+
+[resource]
+script = ExtResource("1_xfsi1")
+tower_name = "Wall"
+max_health = 60.0
+tower_scene = ExtResource("2_1jfeq")
+cost = 10
+base_texture = ExtResource("1_ekp74")
+metadata/_custom_type_script = "uid://b4bxqnjashia2"

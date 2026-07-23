@@ -20,6 +20,7 @@ script = ExtResource("1_14s00")
 shape = SubResource("CircleShape2D_3rkdv")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1479108842]
+vertices = PackedVector2Array(-16, 16, 16, 16, 16, -16, -16, -16)
 
 [node name="ExpiryComponent" type="Node" parent="." unique_id=988605677]
 script = ExtResource("2_idxjh")
@@ -27,3 +28,4 @@ script = ExtResource("2_idxjh")
 [node name="LifetimeBar" type="ProgressBar" parent="." unique_id=762480979]
 offset_right = 4.0
 offset_bottom = 27.0
+show_percentage = false

@@ -78,7 +78,7 @@ func _place_tower(tile_coords: Vector2i) -> void:
 	occupied_tiles[tile_coords] = tower
 	tower.tree_exited.connect(func(): occupied_tiles.erase(tile_coords))
 	TimeManager.spendTime(tower.tower_data.cost)
-	cancel_placement()
+	#cancel_placement()
 
 
 func _is_tile_valid(tile_coords: Vector2i) -> bool:

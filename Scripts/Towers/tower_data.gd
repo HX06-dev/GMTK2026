@@ -6,7 +6,6 @@ class_name TowerData
 @export var fire_rate: float
 @export var range: float
 @export var max_health: float
-@export var obstacle_radius: float
 @export var projectile_scene: PackedScene
 @export var tower_scene: PackedScene
 @export var cost: int

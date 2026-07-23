@@ -63,7 +63,6 @@ func _apply_tower_data() -> void:
 
 
 func _setup_navigation_obstacle() -> void:
-	nav_obstacle.radius = tower_data.obstacle_radius
 	nav_obstacle.avoidance_enabled = true
 
 
