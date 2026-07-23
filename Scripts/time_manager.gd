@@ -2,16 +2,19 @@ extends Node
 class_name TimeManager
 
 @export var startTime: int = 100
-@export var paused: bool = false
+@export var paused: CheckButton
+@export var timeLabel: Label
+
 var timeElapsed: float = 0
+var timeLeft: int
 static var timeModifications: int = 0
 
 func _physics_process(delta: float):
-	if paused:
+	if paused.button_pressed:
 		return
 	timeElapsed += delta
-	var timeLeft: int = floor(startTime-timeElapsed+timeModifications)
-	print("Time left: ", timeLeft)
+	timeLeft = max(floor(startTime-timeElapsed+timeModifications), 0)
+	timeLabel.text = "Time: " + str(timeLeft)
 
 static func addTime(amount: int):
 	timeModifications += amount

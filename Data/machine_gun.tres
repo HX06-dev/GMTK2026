@@ -46,7 +46,6 @@ damage = 3.0
 fire_rate = 6.0
 range = 128.0
 max_health = 100.0
-obstacle_radius = 32.0
 projectile_scene = ExtResource("1_ctqmk")
 tower_scene = ExtResource("3_ctqmk")
 cost = 10

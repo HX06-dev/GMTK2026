@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://cxmo43wg86cv8"]
+
+[ext_resource type="Texture2D" uid="uid://dmpbosf7hx0i7" path="res://Assets/Towers/homebase.png" id="1_1n6sm"]
+[ext_resource type="Script" uid="uid://b4bxqnjashia2" path="res://Scripts/Towers/tower_data.gd" id="1_tskiu"]
+[ext_resource type="PackedScene" uid="uid://35mk0r8u7gen" path="res://Scenes/Towers/Home_Base.tscn" id="2_pntb4"]
+
+[resource]
+script = ExtResource("1_tskiu")
+tower_name = "Home Base"
+max_health = 10.0
+tower_scene = ExtResource("2_pntb4")
+base_texture = ExtResource("1_1n6sm")
+metadata/_custom_type_script = "uid://b4bxqnjashia2"

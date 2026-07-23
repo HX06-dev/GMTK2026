@@ -6,11 +6,14 @@ signal time_changed(current: float, max: float)
 
 @export var max_lifetime: float
 var current_lifetime: float
+var expires: bool = true
 
 func _ready() -> void:
 	current_lifetime = max_lifetime
 
 func _process(delta: float) -> void:
+	if not expires:
+		return
 	_reduce(delta)  # natural decay: 1 second per second, always running
 
 func _reduce(amount: float) -> void:
