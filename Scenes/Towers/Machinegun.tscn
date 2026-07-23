@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://lvg5g3jd2tgl"]
 
 [ext_resource type="PackedScene" uid="uid://hrg3tklf54dy" path="res://Scenes/Towers/Tower.tscn" id="1_0gcm1"]
+[ext_resource type="Script" uid="uid://34d0p1f8m8ps" path="res://Scripts/Towers/subclasses/machinegun.gd" id="2_0gcm1"]
 
 [node name="Tower" unique_id=488111682 instance=ExtResource("1_0gcm1")]
+script = ExtResource("2_0gcm1")
