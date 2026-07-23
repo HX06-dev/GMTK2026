@@ -1,5 +1,5 @@
 extends Tower
-class_name GunTower
+class_name FlamethrowerTower
 
 @export var TOWER_NAME: String
 @export var RANGE: int
@@ -9,8 +9,7 @@ class_name GunTower
 @export var COST: int
 
 func _init():
-	tower_name = TOWER_NAME
-	range = RANGE
+	attack_range = RANGE
 	damage = DAMAGE
 	fire_rate = FIRE_RATE
 	projectile_scene = PROJECTILE_SCENE
