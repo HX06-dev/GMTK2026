@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cqhqvqbu1ny4s"]
 
 [ext_resource type="PackedScene" uid="uid://hrg3tklf54dy" path="res://Scenes/Towers/Tower.tscn" id="1_j0boc"]
+[ext_resource type="Script" uid="uid://cdxjv1dhn4dl8" path="res://Scripts/Towers/subclasses/flamethrower.gd" id="2_j0boc"]
 
 [node name="Tower" unique_id=488111682 instance=ExtResource("1_j0boc")]
+script = ExtResource("2_j0boc")

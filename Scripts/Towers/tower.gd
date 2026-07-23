@@ -37,10 +37,6 @@ func _ready() -> void:
 
 
 func _apply_tower_data() -> void:
-	if not tower_data:
-		push_warning("Tower has no TowerData assigned: %s" % name)
-		return
-
 	damage = tower_data.damage
 	fire_rate = tower_data.fire_rate
 	attack_range = tower_data.range
@@ -76,7 +72,7 @@ func _acquire_target() -> void:
 	enemies_in_range = enemies_in_range.filter(func(e): return is_instance_valid(e))
 
 	if current_target and current_target in enemies_in_range:
-		return  # keep current target; swap this out for closest/strongest/etc later
+		return  # keep current target;
 
 	current_target = enemies_in_range[0] if enemies_in_range.size() > 0 else null
 
