@@ -7,6 +7,6 @@ script = ExtResource("1_r150o")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=2141326381]
 
-[node name="Towers" type="Node2D" parent="." unique_id=790668397]
+[node name="Towers" type="TileMapLayer" parent="." unique_id=30246069]
 
 [node name="Foreground" type="TileMapLayer" parent="." unique_id=1587105967]

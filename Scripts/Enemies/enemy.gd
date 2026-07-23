@@ -153,8 +153,6 @@ func die() -> void:
 	died.emit(self)
 	_set_state(State.DYING)
 	velocity = Vector2.ZERO
-	# note: queue_free() no longer happens here directly —
-	# it happens in _on_animation_finished once "death" plays out
 
 
 func _on_obstacle_detected(body: Node2D) -> void:
