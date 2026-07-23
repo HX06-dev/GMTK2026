@@ -5,12 +5,19 @@ class_name TowerPlacer
 @export var towers_container: Node2D
 @export var preview_top: AnimatedSprite2D
 @export var preview_base: Sprite2D
+@export var towerSelecter: OptionButton
+
+@onready var machine_gun_data: TowerData = preload("res://Data/machine_gun.tres")
+@onready var wall_data: TowerData = preload("res://Data/wall.tres")
+@onready var home_base_data: TowerData = preload("res://Data/home_base.tres")
+@onready var towerDataIndex = [machine_gun_data, wall_data, home_base_data]
 
 var selected_tower_data: TowerData = null
 var occupied_tiles: Dictionary = {}
 
 
 func _ready() -> void:
+	towerSelecter.item_selected.connect(_change_tower_selection)
 	preview_top.visible = false
 	preview_base.visible = false
 	preview_top.modulate.a = 0.5
@@ -90,3 +97,6 @@ func _is_tile_valid(tile_coords: Vector2i) -> bool:
 		return false
 
 	return tile_data.get_custom_data("buildable") == true
+
+func _change_tower_selection(index: int) -> void:
+	select_tower(towerDataIndex[index])

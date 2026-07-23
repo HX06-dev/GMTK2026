@@ -30,12 +30,13 @@ position = Vector2(318, 217)
 [node name="Towers" type="Node2D" parent="." unique_id=1864634292]
 z_index = 2
 
-[node name="TowerPlacer" type="Node2D" parent="." unique_id=547239547 node_paths=PackedStringArray("tile_map", "towers_container", "preview_top", "preview_base")]
+[node name="TowerPlacer" type="Node2D" parent="." unique_id=547239547 node_paths=PackedStringArray("tile_map", "towers_container", "preview_top", "preview_base", "towerSelecter")]
 script = ExtResource("2_idj7w")
 tile_map = NodePath("../Ground")
 towers_container = NodePath("../Towers")
 preview_top = NodePath("PreviewTop")
 preview_base = NodePath("PreviewBase")
+towerSelecter = NodePath("../CanvasLayer/SelectTower")
 
 [node name="PreviewTop" type="AnimatedSprite2D" parent="TowerPlacer" unique_id=1323991593]
 visible = false
@@ -72,3 +73,16 @@ text = "Time: "
 offset_top = 23.0
 offset_right = 44.0
 offset_bottom = 47.0
+
+[node name="SelectTower" type="OptionButton" parent="CanvasLayer" unique_id=547966324]
+offset_top = 47.0
+offset_right = 32.0
+offset_bottom = 67.0
+selected = 0
+item_count = 3
+popup/item_0/text = "Machine Gun"
+popup/item_0/id = 0
+popup/item_1/text = "Wall"
+popup/item_1/id = 1
+popup/item_2/text = "Home Base"
+popup/item_2/id = 2
