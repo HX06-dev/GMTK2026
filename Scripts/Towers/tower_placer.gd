@@ -3,14 +3,18 @@ class_name TowerPlacer
 
 @export var tile_map: TileMapLayer
 @export var towers_container: Node2D
-@export var preview: Node2D
+@export var preview_top: AnimatedSprite2D
+@export var preview_base: Sprite2D
 
 var selected_tower_data: TowerData = null
 var occupied_tiles: Dictionary = {}
 
 
 func _ready() -> void:
-	preview.visible = false
+	preview_top.visible = false
+	preview_base.visible = false
+	preview_top.modulate.a = 0.5
+	preview_base.modulate.a = 0.5
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -33,19 +37,23 @@ func _process(_delta: float) -> void:
 	var tile_coords = tile_map.local_to_map(tile_map.to_local(mouse_pos))
 	var snapped_world_pos = tile_map.to_global(tile_map.map_to_local(tile_coords))
 
-	preview.visible = true
-	preview.global_position = snapped_world_pos
-	preview.modulate = Color.WHITE if _is_tile_valid(tile_coords) else Color(1, 0.3, 0.3, 0.6)
+	preview_top.visible = true
+	preview_top.global_position = snapped_world_pos
 
 
 func select_tower(tower_data: TowerData) -> void:
 	selected_tower_data = tower_data
-	preview.visible = true
+	preview_top.visible = true
+	preview_top.sprite_frames = tower_data.top_sprite_frames
+	preview_top.play("idle")
+	preview_base.visible = true
+	preview_base.texture = tower_data.base_texture
 
 
 func cancel_placement() -> void:
 	selected_tower_data = null
-	preview.visible = false
+	preview_top.visible = false
+	preview_base.visible = false
 
 
 func _try_place_tower() -> void:

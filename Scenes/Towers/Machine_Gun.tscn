@@ -41,10 +41,6 @@ animations = [{
 
 [node name="Tower" unique_id=488111682 instance=ExtResource("1_ewjbf")]
 script = ExtResource("2_qax3b")
-spin_up_time = 0.6
-max_heat = 100.0
-heat_per_shot = 8.0
-heat_cooldown_rate = 25.0
 spread_degrees = 6.0
 tower_data = ExtResource("3_jrlbj")
 angle_offset = 90.0
