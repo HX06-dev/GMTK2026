@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cks3cwebv1yim"]
 
+[ext_resource type="Script" uid="uid://dnjd7qiorhe0" path="res://Scripts/Projectiles/bullet.gd" id="1_yvbqg"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rkdv"]
 
 [node name="Bullet" type="Area2D" unique_id=948046892]
+script = ExtResource("1_yvbqg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1188738584]
 

@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	_acquire_target()
 
 	if current_target:
-		_aim_at_target(delta)
+		_aim_at_target()
 		_handle_spin_up(delta)
 	else:
 		spin_up_progress = 0.0

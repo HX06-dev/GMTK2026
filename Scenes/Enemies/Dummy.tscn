@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://csjvh67l4cf30"]
+
+[ext_resource type="Script" uid="uid://cte56csxi6mci" path="res://Scripts/Enemies/dummy.gd" id="1_opypx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rkdv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3rkdv"]
+
+[node name="Dummy" type="CharacterBody2D" unique_id=1399454478]
+script = ExtResource("1_opypx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=837994049]
+shape = SubResource("CircleShape2D_3rkdv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586681859]
+texture = SubResource("CanvasTexture_3rkdv")

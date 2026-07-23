@@ -23,8 +23,6 @@ func setup(new_target: Node2D, new_damage: float) -> void:
 	rotation = direction.angle()
 
 
-# Called by towers that want straight-line spread shots instead of homing
-# (e.g. the machine gun's spread_degrees) — must be called AFTER setup()
 func set_direction_override(new_direction: Vector2) -> void:
 	direction = new_direction
 	homing = false
