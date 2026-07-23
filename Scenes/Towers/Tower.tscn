@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://hrg3tklf54dy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rkdv"]
+
+[node name="Tower" type="Node2D" unique_id=488111682]
+
+[node name="Base" type="Sprite2D" parent="." unique_id=1630126326]
+
+[node name="Top" type="Sprite2D" parent="." unique_id=1080309102]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1331606487]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=85814790]
+shape = SubResource("CircleShape2D_3rkdv")
+
+[node name="ExpiryComponent" type="Node" parent="." unique_id=988605677]
+
+[node name="LifetimeBar" type="ProgressBar" parent="." unique_id=762480979]
+offset_right = 4.0
+offset_bottom = 27.0

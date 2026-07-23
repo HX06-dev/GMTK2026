@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://qm5cskommumt"]
+
+[ext_resource type="Script" uid="uid://1vtketbcgwfh" path="res://Scripts/enemy.gd" id="1_ucmt6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yo8tq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6p6gg"]
+radius = 47.042534
+
+[node name="Enemy" type="CharacterBody2D" unique_id=610749140]
+script = ExtResource("1_ucmt6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=255058262]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1870703197]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=635397515]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1934882223]
+shape = SubResource("CircleShape2D_yo8tq")
+
+[node name="ObstacleDetector" type="Area2D" parent="." unique_id=888185937]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleDetector" unique_id=568457305]
+shape = SubResource("CircleShape2D_6p6gg")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1325041502]
+offset_right = 4.0
+offset_bottom = 27.0
