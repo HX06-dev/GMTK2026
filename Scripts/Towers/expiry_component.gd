@@ -4,7 +4,7 @@ class_name ExpiryComponent
 signal expired
 signal time_changed(current: float, max: float)
 
-@export var max_lifetime: float = 30.0
+@export var max_lifetime: float
 var current_lifetime: float
 
 func _ready() -> void:

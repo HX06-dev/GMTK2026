@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://b6llvorvber8f"]
+
+[ext_resource type="PackedScene" uid="uid://hrg3tklf54dy" path="res://Scenes/Towers/Tower.tscn" id="1_ewjbf"]
+[ext_resource type="Texture2D" uid="uid://b7l8xjp4w14jf" path="res://Assets/Towers/pixilart-sprite-transparent.png" id="2_8le6y"]
+[ext_resource type="Script" uid="uid://blc3307i5168n" path="res://Scripts/Towers/subclasses/machine_gun.gd" id="2_qax3b"]
+[ext_resource type="PackedScene" uid="uid://cks3cwebv1yim" path="res://Scenes/Projectiles/Bullet.tscn" id="3_rhiss"]
+[ext_resource type="Script" uid="uid://b4bxqnjashia2" path="res://Scripts/Towers/tower_data.gd" id="4_frjml"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jrlbj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctqmk"]
+atlas = ExtResource("2_8le6y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y3ce"]
+atlas = ExtResource("2_8le6y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm3pp"]
+atlas = ExtResource("2_8le6y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pnqi1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctqmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y3ce")
+}],
+"loop": 1,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm3pp")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_7x5xp"]
+script = ExtResource("4_frjml")
+tower_name = "Machine Gun"
+damage = 3.0
+fire_rate = 3.0
+range = 100.0
+max_health = 30.0
+obstacle_radius = 10.0
+projectile_scene = ExtResource("3_rhiss")
+tower_scene = null
+base_texture = SubResource("CanvasTexture_jrlbj")
+top_sprite_frames = SubResource("SpriteFrames_pnqi1")
+metadata/_custom_type_script = "uid://b4bxqnjashia2"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qax3b"]
+atlas = ExtResource("2_8le6y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrlbj"]
+atlas = ExtResource("2_8le6y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhiss"]
+atlas = ExtResource("2_8le6y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctqmk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qax3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrlbj")
+}],
+"loop": 1,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhiss")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Tower" unique_id=488111682 instance=ExtResource("1_ewjbf")]
+script = ExtResource("2_qax3b")
+spin_up_time = 0.6
+max_heat = 100.0
+heat_per_shot = 8.0
+heat_cooldown_rate = 25.0
+spread_degrees = 6.0
+tower_data = SubResource("Resource_7x5xp")
+sprite_angle_offset_degrees = 90.0
+
+[node name="TopSprite" parent="." index="1" unique_id=135935464]
+sprite_frames = SubResource("SpriteFrames_ctqmk")
+animation = &"idle"
+
+[node name="MuzzlePoint" parent="TopSprite" index="0" unique_id=1173067676]
+position = Vector2(2, -15)
+
+[node name="MuzzlePoint2" type="Marker2D" parent="TopSprite" index="1" unique_id=733878057]
+position = Vector2(-2, -15)
+
+[node name="LifetimeBar" parent="." index="5" unique_id=762480979]
+offset_left = -8.0
+offset_top = 12.0
+offset_right = 8.0
+offset_bottom = 16.0
+show_percentage = false

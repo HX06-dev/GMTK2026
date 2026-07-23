@@ -13,6 +13,8 @@ script = ExtResource("1_r150o")
 [node name="Towers" type="Node2D" parent="." unique_id=1864634292]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1705227080]
+position = Vector2(384, 216)
+zoom = Vector2(1.5, 1.5)
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=2077831441]
 tile_set = SubResource("TileSet_idj7w")

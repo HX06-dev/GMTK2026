@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cks3cwebv1yim"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rkdv"]
+
+[node name="Bullet" type="Area2D" unique_id=948046892]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1188738584]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1683970473]
+shape = SubResource("CircleShape2D_3rkdv")

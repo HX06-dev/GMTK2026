@@ -1,22 +1,28 @@
 [gd_scene format=3 uid="uid://hrg3tklf54dy"]
 
 [ext_resource type="Script" uid="uid://cdy72v710c23v" path="res://Scripts/Towers/tower.gd" id="1_14s00"]
+[ext_resource type="Script" uid="uid://dhb32hj3yh4in" path="res://Scripts/Towers/expiry_component.gd" id="2_idxjh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rkdv"]
 
 [node name="Tower" type="Node2D" unique_id=488111682]
+script = ExtResource("1_14s00")
 
 [node name="BaseSprite" type="Sprite2D" parent="." unique_id=1630126326]
 
-[node name="TopSprite" type="Sprite2D" parent="." unique_id=1080309102]
-script = ExtResource("1_14s00")
+[node name="TopSprite" type="AnimatedSprite2D" parent="." unique_id=135935464]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1331606487]
+[node name="MuzzlePoint" type="Marker2D" parent="TopSprite" unique_id=1173067676]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=85814790]
+[node name="RangeArea" type="Area2D" parent="." unique_id=1331606487]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeArea" unique_id=85814790]
 shape = SubResource("CircleShape2D_3rkdv")
 
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1479108842]
+
 [node name="ExpiryComponent" type="Node" parent="." unique_id=988605677]
+script = ExtResource("2_idxjh")
 
 [node name="LifetimeBar" type="ProgressBar" parent="." unique_id=762480979]
 offset_right = 4.0
