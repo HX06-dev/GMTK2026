@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://ctae7kpgvna66"]
 
 [ext_resource type="Script" uid="uid://cms6argpvhn5j" path="res://Scripts/main.gd" id="1_r150o"]
-[ext_resource type="Script" uid="uid://d2rrp7opj60mj" path="res://Scripts/tower_placer.gd" id="2_idj7w"]
+[ext_resource type="Script" uid="uid://d2rrp7opj60mj" path="res://Scripts/Towers/tower_placer.gd" id="2_idj7w"]
 [ext_resource type="Texture2D" uid="uid://cokv3m7iwlemc" path="res://Assets/grass.png" id="2_kln2b"]
 [ext_resource type="PackedScene" uid="uid://csjvh67l4cf30" path="res://Scenes/Enemies/Dummy.tscn" id="2_rgh2o"]
+[ext_resource type="Script" uid="uid://3u77jr50s3mg" path="res://Scripts/time_manager.gd" id="5_pbw6q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgh2o"]
 texture = ExtResource("2_kln2b")
@@ -47,3 +48,6 @@ position = Vector2(384, 216)
 zoom = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=337610408]
+
+[node name="TimeManager" type="Node" parent="." unique_id=190709351]
+script = ExtResource("5_pbw6q")
