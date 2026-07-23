@@ -2,11 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cms6argpvhn5j" path="res://Scripts/main.gd" id="1_r150o"]
 
+[sub_resource type="TileSet" id="TileSet_idj7w"]
+tile_size = Vector2i(32, 32)
+
 [node name="Main" type="Node2D" unique_id=171715838]
 script = ExtResource("1_r150o")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=2141326381]
 
-[node name="Towers" type="Node2D" parent="." unique_id=790668397]
+[node name="Towers" type="Node2D" parent="." unique_id=1864634292]
 
-[node name="Foreground" type="TileMapLayer" parent="." unique_id=1587105967]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1705227080]
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2077831441]
+tile_set = SubResource("TileSet_idj7w")
