@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://b7l8xjp4w14jf" path="res://Assets/Towers/pixilart-sprite-transparent.png" id="2_pnqi1"]
 [ext_resource type="PackedScene" uid="uid://b6llvorvber8f" path="res://Scenes/Towers/Machine_Gun.tscn" id="3_ctqmk"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_jrlbj"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ctqmk"]
 atlas = ExtResource("2_pnqi1")
 region = Rect2(32, 0, 32, 32)
@@ -19,7 +17,7 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("2_pnqi1")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pnqi1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvwf2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -30,7 +28,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"fire",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -45,12 +43,12 @@ animations = [{
 script = ExtResource("1_77ng8")
 tower_name = "Machine Gun"
 damage = 3.0
-fire_rate = 10.0
-range = 100.0
-max_health = 30.0
-obstacle_radius = 10.0
+fire_rate = 6.0
+range = 128.0
+max_health = 100.0
+obstacle_radius = 32.0
 projectile_scene = ExtResource("1_ctqmk")
 tower_scene = ExtResource("3_ctqmk")
-base_texture = SubResource("CanvasTexture_jrlbj")
-top_sprite_frames = SubResource("SpriteFrames_pnqi1")
+cost = 10
+top_sprite_frames = SubResource("SpriteFrames_rvwf2")
 metadata/_custom_type_script = "uid://b4bxqnjashia2"

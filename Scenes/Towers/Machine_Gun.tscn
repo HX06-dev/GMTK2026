@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://hrg3tklf54dy" path="res://Scenes/Towers/Tower.tscn" id="1_ewjbf"]
 [ext_resource type="Texture2D" uid="uid://b7l8xjp4w14jf" path="res://Assets/Towers/pixilart-sprite-transparent.png" id="2_8le6y"]
 [ext_resource type="Script" uid="uid://blc3307i5168n" path="res://Scripts/Towers/subclasses/machine_gun.gd" id="2_qax3b"]
-[ext_resource type="Resource" uid="uid://cp2krc4d5v31h" path="res://Data/machine_gun.tres" id="3_jrlbj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qax3b"]
 atlas = ExtResource("2_8le6y")
@@ -42,7 +41,6 @@ animations = [{
 [node name="Tower" unique_id=488111682 instance=ExtResource("1_ewjbf")]
 script = ExtResource("2_qax3b")
 spread_degrees = 6.0
-tower_data = ExtResource("3_jrlbj")
 angle_offset = 90.0
 
 [node name="TopSprite" parent="." index="1" unique_id=135935464]

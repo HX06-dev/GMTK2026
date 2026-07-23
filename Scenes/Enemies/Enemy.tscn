@@ -9,12 +9,6 @@ radius = 47.042534
 
 [node name="Enemy" type="CharacterBody2D" unique_id=610749140]
 script = ExtResource("1_ucmt6")
-max_health = null
-move_speed = null
-attack_damage = null
-attack_range = null
-target_mode = null
-reward = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=673758476]
 

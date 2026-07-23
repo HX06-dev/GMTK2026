@@ -150,6 +150,7 @@ func take_damage(amount: float) -> void:
 func die() -> void:
 	if state == State.DYING:
 		return
+	TimeManager.addTime(enemy_data.reward)
 	died.emit(self)
 	_set_state(State.DYING)
 	velocity = Vector2.ZERO
