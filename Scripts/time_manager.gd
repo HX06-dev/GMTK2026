@@ -4,9 +4,9 @@ class_name TimeManager
 @export var startTime: int = 100
 @export var paused: CheckButton
 @export var timeLabel: Label
+@export var timeLeft: int
 
 var timeElapsed: float = 0
-var timeLeft: int
 static var timeModifications: int = 0
 
 func _physics_process(delta: float):
@@ -21,3 +21,6 @@ static func addTime(amount: int):
 
 static func spendTime(amount: int):
 	timeModifications -= amount
+
+func getTime():
+	return timeLeft

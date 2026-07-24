@@ -7,7 +7,7 @@ enum State { MOVING, ATTACKING, DYING }
 
 # --- Data ---
 @export var enemy_data: EnemyData
-var main_target: Node2D
+@export var main_target: Node2D
 
 # --- Runtime stats ---
 var max_health: float
@@ -27,7 +27,7 @@ var state: State = State.MOVING
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var attack_area: Area2D = $AttackArea
 @onready var obstacle_detector: Area2D = $ObstacleDetector
-@onready var obstacle_collision_shape: CollisionShape2D = $ObstacleDetector/CollisionShape2D
+@onready var obstacle_collision_shape: CollisionShape2D = $ObstacleDetector/CollisionShape2Db
 @onready var health_bar: ProgressBar = $HealthBar
 
 
@@ -70,7 +70,7 @@ func _apply_enemy_data() -> void:
 
 func _physics_process(delta: float) -> void:
 	if state == State.DYING:
-		return  # let death animation play out, no movement/attacking
+		return
 
 	_retarget()
 
@@ -178,7 +178,7 @@ func get_closest_obstacle() -> Node2D:
 	)
 
 
-func is_path_blocked_by_wall() -> bool:
+func is_path_blocked() -> bool:
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsRayQueryParameters2D.create(global_position, main_target.global_position)
 	query.collision_mask = _get_wall_collision_mask()
@@ -186,7 +186,7 @@ func is_path_blocked_by_wall() -> bool:
 	return not result.is_empty()
 
 
-func get_blocking_wall() -> Node2D:
+func get_blocking() -> Node2D:
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsRayQueryParameters2D.create(global_position, main_target.global_position)
 	query.collision_mask = _get_wall_collision_mask()
@@ -195,4 +195,4 @@ func get_blocking_wall() -> Node2D:
 
 
 func _get_wall_collision_mask() -> int:
-	return 0b0010
+	return (1 << 1) | (1 << 2)  # walls (layer 2) + towers (layer 3)

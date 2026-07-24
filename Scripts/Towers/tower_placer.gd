@@ -6,11 +6,11 @@ class_name TowerPlacer
 @export var preview_top: AnimatedSprite2D
 @export var preview_base: Sprite2D
 @export var towerSelecter: OptionButton
+@export var timeManager: TimeManager
 
 @onready var machine_gun_data: TowerData = preload("res://Data/machine_gun.tres")
 @onready var wall_data: TowerData = preload("res://Data/wall.tres")
-@onready var home_base_data: TowerData = preload("res://Data/home_base.tres")
-@onready var towerDataIndex = [machine_gun_data, wall_data, home_base_data]
+@onready var towerDataIndex = [machine_gun_data, wall_data]
 
 var selected_tower_data: TowerData = null
 var occupied_tiles: Dictionary = {}
@@ -20,8 +20,7 @@ func _ready() -> void:
 	towerSelecter.item_selected.connect(_change_tower_selection)
 	preview_top.visible = false
 	preview_base.visible = false
-	preview_top.modulate.a = 0.5
-	preview_base.modulate.a = 0.5
+	select_tower(machine_gun_data)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -46,7 +45,14 @@ func _process(_delta: float) -> void:
 
 	preview_top.visible = true
 	preview_top.global_position = snapped_world_pos
-
+	preview_base.visible = true
+	preview_base.global_position = snapped_world_pos
+	if not _is_tile_valid(tile_coords):
+		preview_base.modulate = Color(1,0.5,0.5,0.5)
+		preview_top.modulate = Color(1,0.5,0.5,0.5)
+	else:
+		preview_base.modulate = Color(1,1,1,0.5)
+		preview_top.modulate = Color(1,1,1,0.5)
 
 func select_tower(tower_data: TowerData) -> void:
 	selected_tower_data = tower_data
@@ -85,11 +91,13 @@ func _place_tower(tile_coords: Vector2i) -> void:
 	occupied_tiles[tile_coords] = tower
 	tower.tree_exited.connect(func(): occupied_tiles.erase(tile_coords))
 	TimeManager.spendTime(tower.tower_data.cost)
-	#cancel_placement()
 
 
 func _is_tile_valid(tile_coords: Vector2i) -> bool:
 	if occupied_tiles.has(tile_coords):
+		return false
+		
+	if selected_tower_data.cost > timeManager.timeLeft:
 		return false
 
 	var tile_data: TileData = tile_map.get_cell_tile_data(tile_coords)
@@ -97,6 +105,7 @@ func _is_tile_valid(tile_coords: Vector2i) -> bool:
 		return false
 
 	return tile_data.get_custom_data("buildable") == true
+
 
 func _change_tower_selection(index: int) -> void:
 	select_tower(towerDataIndex[index])

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://x4lhr7pma1sy"]
+
+[ext_resource type="Script" uid="uid://dck3u6lgnohsf" path="res://Scripts/Enemies/enemy_data.gd" id="1_rxd8b"]
+[ext_resource type="Texture2D" uid="uid://b4sy8sl71mb7y" path="res://Assets/Enemies/Brute_Sprite.png" id="2_8svhu"]
+[ext_resource type="Script" uid="uid://csg1lirvrmuj0" path="res://Scripts/Strategies/targeting_base_only.gd" id="3_a0ycv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27nw0"]
+atlas = ExtResource("2_8svhu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8svhu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27nw0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_33inu"]
+script = ExtResource("3_a0ycv")
+metadata/_custom_type_script = "uid://csg1lirvrmuj0"
+
+[resource]
+script = ExtResource("1_rxd8b")
+enemy_name = "Brute"
+max_health = 100.0
+move_speed = 5.0
+attack_range = 30.0
+obstacle_detect_range = 100.0
+sprite_frames = SubResource("SpriteFrames_8svhu")
+targeting_strategy = SubResource("Resource_33inu")
+metadata/_custom_type_script = "uid://dck3u6lgnohsf"

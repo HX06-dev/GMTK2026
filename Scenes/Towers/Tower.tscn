@@ -5,6 +5,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rkdv"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rkdv"]
+size = Vector2(32, 32)
+
 [node name="Tower" type="Node2D" unique_id=488111682]
 script = ExtResource("1_14s00")
 
@@ -29,3 +32,8 @@ script = ExtResource("2_idxjh")
 offset_right = 4.0
 offset_bottom = 27.0
 show_percentage = false
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1118681052]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1453168438]
+shape = SubResource("RectangleShape2D_3rkdv")

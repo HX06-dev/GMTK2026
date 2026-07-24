@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://qm5cskommumt"]
 
 [ext_resource type="Script" uid="uid://1vtketbcgwfh" path="res://Scripts/Enemies/enemy.gd" id="1_ucmt6"]
+[ext_resource type="Resource" uid="uid://x4lhr7pma1sy" path="res://Data/brute.tres" id="2_8o0hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yo8tq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6p6gg"]
 radius = 47.042534
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rkdv"]
+
 [node name="Enemy" type="CharacterBody2D" unique_id=610749140]
 script = ExtResource("1_ucmt6")
+enemy_data = ExtResource("2_8o0hk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=673758476]
 
@@ -16,14 +20,22 @@ script = ExtResource("1_ucmt6")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=635397515]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1934882223]
+[node name="CollisionShape2Da" type="CollisionShape2D" parent="AttackArea" unique_id=1934882223]
 shape = SubResource("CircleShape2D_yo8tq")
 
 [node name="ObstacleDetector" type="Area2D" parent="." unique_id=888185937]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleDetector" unique_id=568457305]
+[node name="CollisionShape2Db" type="CollisionShape2D" parent="ObstacleDetector" unique_id=568457305]
 shape = SubResource("CircleShape2D_6p6gg")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1325041502]
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = -25.0
+offset_top = -62.0
+offset_right = 25.0
+offset_bottom = -52.0
+show_percentage = false
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=235192536]
+
+[node name="CollisionShape2Dc" type="CollisionShape2D" parent="Hitbox" unique_id=1039811776]
+shape = SubResource("CircleShape2D_3rkdv")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cokv3m7iwlemc"
-path="res://.godot/imported/grass.png-46bb554aade75a091da98570239d1507.ctex"
+uid="uid://b4sy8sl71mb7y"
+path="res://.godot/imported/Brute_Sprite.png-a52a47875a5ab6e65763b3a4b3768fa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/grass.png"
-dest_files=["res://.godot/imported/grass.png-46bb554aade75a091da98570239d1507.ctex"]
+source_file="res://Assets/Enemies/Brute_Sprite.png"
+dest_files=["res://.godot/imported/Brute_Sprite.png-a52a47875a5ab6e65763b3a4b3768fa3.ctex"]
 
 [params]
 

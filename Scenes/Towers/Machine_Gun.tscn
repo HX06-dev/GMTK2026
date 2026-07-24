@@ -58,3 +58,6 @@ offset_left = -8.0
 offset_top = 12.0
 offset_right = 8.0
 offset_bottom = 16.0
+
+[node name="Hitbox" parent="." index="6" unique_id=1118681052]
+collision_layer = 6
