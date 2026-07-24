@@ -31,8 +31,6 @@ func _ready() -> void:
 		return
 
 	_apply_tower_data()
-	_setup_navigation_obstacle()
-
 	range_area.body_entered.connect(_on_body_entered)
 	range_area.body_exited.connect(_on_body_exited)
 	expiry.expired.connect(_on_expired)
@@ -60,10 +58,6 @@ func _apply_tower_data() -> void:
 	expiry.current_lifetime = tower_data.max_health
 	lifetime_bar.max_value = tower_data.max_health
 	lifetime_bar.value = tower_data.max_health
-
-
-func _setup_navigation_obstacle() -> void:
-	nav_obstacle.avoidance_enabled = true
 
 
 func _process(delta: float) -> void:
